@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.adedom.library.Dru;
 import com.adedom.library.ExecuteQuery;
@@ -19,8 +20,12 @@ import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {
 
-    public String temp="0";
+    public String temp="0",hum="0",hum_v2="0",sw;
 
+    int powerStatus = 0;
+
+    private SwitchCompat switchPower;
+    private PowerDbHelper dbHelper;
 
 
     private Button mBtSelect;
@@ -30,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtRvAndGlide;
 
     TextView txt_temp,txt_hum,txt_soil;
-
+    int on =1;
+    int off=0;
     private CircularSeekBar circularSeekBar,circularSeekBar2,circularSeekBar3;
 
 
@@ -40,12 +46,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         if (ConnectDB.getConnection() == null) {
             Dru.failed(getBaseContext());
         } else {
             Dru.completed(getBaseContext());
         }
+
+        Switch SwitchON_OFF = findViewById(R.id.smsSwitch);
+        //SwitchON_OFF.setChecked(false);
+
+
+
+
+
+
+
+        String sql = "SELECT power FROM power ORDER BY id_power DESC LIMIT 1";
+        Dru.connection(ConnectDB.getConnection())
+                .execute(sql)
+                .commit(new ExecuteQuery() {
+                    @Override
+                    public void onComplete(ResultSet resultSet) {
+                        try {
+                            while (resultSet.next()) {
+                                //todo date loop row
+                                // sw = resultSet.getString("power");
+                                powerStatus = resultSet.getInt("power");
+
+                                if (powerStatus==1){
+                                    SwitchON_OFF.setChecked(true);
+                                    Toast.makeText(getBaseContext(), "ON"+sw, Toast.LENGTH_SHORT).show();
+
+                                }else {
+                                    SwitchON_OFF.setChecked(false);
+                                    Toast.makeText(getBaseContext(), "Off", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+
+
 
         txt_hum=findViewById(R.id.him_text);
         txt_temp=findViewById(R.id.temp_text);
@@ -63,17 +108,16 @@ public class MainActivity extends AppCompatActivity {
 //        mBtRvAndGlide = (Button) findViewById(R.id.bt_rv_and_glide);
 
 
-        Switch SwitchON_OFF = findViewById(R.id.smsSwitch);
+
         SwitchON_OFF.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                int on =1;
-                int off=0;
+
                     if (isChecked) {
 //                        String name = mEtName.getText().toString().trim();
 //                        String image = mEtImage.getText().toString().trim();
-                        String sql = "INSERT INTO `power`(`power`) VALUES ('" + on + "')";
+                        String sql = "INSERT INTO `power`(`power`) VALUES (1)";
                         Dru.connection(ConnectDB.getConnection())
                                 .execute(sql)
                                 .commit(new ExecuteUpdate() {
@@ -89,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 });
                     } else {
-                        String sql = "INSERT INTO `power`(`power`) VALUES ('" + off + "')";
+                        String sql2 = "INSERT INTO `power`(`power`) VALUES (0)";
                         Dru.connection(ConnectDB.getConnection())
-                                .execute(sql)
+                                .execute(sql2)
                                 .commit(new ExecuteUpdate() {
                                     @Override
                                     public void onComplete() {
