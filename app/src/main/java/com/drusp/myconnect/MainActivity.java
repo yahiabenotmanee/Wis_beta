@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     int powerStatus = 0;
 
     private SwitchCompat switchPower;
-    private PowerDbHelper dbHelper;
+
 
 
     private Button mBtSelect;
