@@ -18,6 +18,7 @@ public class CircularSeekBar extends View {
 
     private  int Blue_v1 = Color.parseColor("#4586D3");
     private  int Blue_v2 = Color.parseColor("#c2c8cf");
+    private  int white = Color.parseColor("#ffffff");
 
 
 
@@ -38,7 +39,7 @@ public class CircularSeekBar extends View {
 
     private void init() {
         circlePaint = new Paint();
-        circlePaint.setColor(Blue_v2);
+        circlePaint.setColor(white);
         circlePaint.setStyle(Paint.Style.STROKE);
         circlePaint.setStrokeWidth(20);
 

@@ -172,5 +172,13 @@
             android:textColor="#6f6f6f"
             android:textSize="28sp"
             android:textStyle="bold" />
+        <Button
+            android:id="@+id/button_switching"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="650dp"
+            android:text="Switch to sim mode"
+            android:background="@drawable/bachground_button_blu"
+            />
     </RelativeLayout>
 </RelativeLayout>

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.drusp.myconnect">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +21,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity_v2"
-            android:exported="false" />
-        <activity android:name=".RecyclerViewAndGlideActivity" />
-        <activity android:name=".DeleteActivity" />
-        <activity android:name=".UpdateActivity" />
-        <activity android:name=".InsertActivity" />
+            android:name=".GsmActivity"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".StatusActivity"
+            android:exported="false"
+            tools:ignore="Instantiatable"/>
+        <activity
+            android:name=".PlantsActivity"
+            android:exported="false"
+            tools:ignore="Instantiatable"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".RecyclerViewAndGlideActivity"
+            tools:ignore="Instantiatable"/>
+        <activity android:name=".DeleteActivity"
+            tools:ignore="Instantiatable"/>
+        <activity android:name=".UpdateActivity"
+            tools:ignore="Instantiatable"/>
+        <activity android:name=".InsertActivity"
+            tools:ignore="Instantiatable"/>
+        <activity
+            android:name=".MainActivity_v2"
+            android:exported="true"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity_v2">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/watary_logo"
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="WIS Priveiw"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:gravity="center|bottom"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="Chose the mode to get your irrigation system dashboard"
+            android:textColor="@color/text_color_description"
+            android:textSize="18dp"
+            android:gravity="center|bottom"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@drawable/bachground_button_blu30"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="Go ahead"
+            android:gravity="center|top"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:text="Go ahead"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Simple mode"
+            android:textColor="@color/Blue_v1"
+            android:textStyle="bold"
+            android:background="@drawable/bachground_button_white"
+            android:layout_marginVertical="10dp"/>
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Full mode"
+            android:textColor="@color/Blue_v1"
+            android:textStyle="bold"
+            android:background="@drawable/bachground_button_white"
+            android:layout_marginVertical="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

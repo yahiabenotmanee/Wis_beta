@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".StatusActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/text_power2"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:text="Succulent plant"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/text_power33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status today"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center"
+                android:textColor="@color/text_color_description"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"/>
+
+
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="1"
+            android:columnOrderPreserved="false"
+            android:rowCount="3">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:elevation="6dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@drawable/bachground_button"
+                    android:orientation="horizontal"
+                    android:padding="6dp">
+
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="190dp"
+
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/thermometer" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:orientation="vertical"
+                        android:gravity="start"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="Temperature"
+                            android:textColor="@color/white"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="info"
+                            android:textColor="@color/white"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="-3dp"
+                            android:textStyle="bold"
+                            android:textSize="18sp"/>
+                        <Button
+                            android:layout_width="70dp"
+                            android:layout_height="35dp"
+                            android:text="Fix"
+                            android:textStyle="bold"
+                            android:textColor="#f5980e"
+                            android:background="@drawable/bachground_button_white"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginLeft="-15dp"
+                        >
+                        <com.drusp.myconnect.CircularSeekBar
+                            android:id="@+id/circularSeekBar"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="6dp"
+                android:elevation="6dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@drawable/bachground_button_blu"
+                    android:orientation="horizontal"
+                    android:padding="6dp">
+
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="190dp"
+
+                        android:orientation="vertical"
+                        android:padding="6dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/humidity" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:orientation="vertical"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="3dp"
+                            android:layout_gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:text="Humidity"
+                                android:textColor="@color/white"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="info"
+                                android:textColor="@color/white"
+                                android:layout_gravity="start"
+                                android:layout_marginTop="0dp"
+                                android:textStyle="bold"
+                                android:textSize="18sp"/>
+                            <Button
+                                android:layout_width="70dp"
+                                android:layout_height="35dp"
+                                android:text="Fix"
+                                android:textStyle="bold"
+                                android:textColor="#4181ea"
+                                android:background="@drawable/bachground_button_white"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginLeft="-15dp"
+                        >
+                        <com.drusp.myconnect.CircularSeekBar
+                            android:id="@+id/circularSeekBar2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="22dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="6dp"
+                android:elevation="6dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@drawable/bachground_button_green"
+                    android:orientation="horizontal"
+                    android:padding="6dp">
+
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="190dp"
+
+                        android:orientation="vertical"
+                        android:padding="6dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/soil" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:orientation="vertical"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="3dp"
+                            android:layout_gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:text="Soil moisture"
+                                android:textColor="@color/white"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="info"
+                                android:textColor="@color/white"
+                                android:layout_gravity="start"
+                                android:layout_marginTop="0dp"
+                                android:textStyle="bold"
+                                android:textSize="18sp"/>
+                            <Button
+                                android:layout_width="70dp"
+                                android:layout_height="35dp"
+                                android:text="Fix"
+                                android:textStyle="bold"
+                                android:textColor="#1b9e58"
+                                android:background="@drawable/bachground_button_white"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginLeft="-15dp"
+                        >
+                        <com.drusp.myconnect.CircularSeekBar
+                            android:id="@+id/circularSeekBar3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
